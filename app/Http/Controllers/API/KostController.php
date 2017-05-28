@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use DB;
-use Carbon\Carbon;
 
 use App\Log;
 use App\Kost;
@@ -38,7 +37,7 @@ class KostController extends Controller
     foreach ($logPenyewa as $penyewa) {
       $result[] = [
         'nama' => $penyewa->user->fullname,
-        'waktu' => $penyewa->created_at
+        'waktu' => $penyewa->created_at->format('d/m/Y - H:i:s')
       ];
     }
     return response()->json($result);
