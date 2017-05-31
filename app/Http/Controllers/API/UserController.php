@@ -42,7 +42,8 @@ class UserController extends Controller
     if($input['kost_id'] != null) {
       $penyewa = User::where([
         ['penyewa_id', '=', $input['kost_id']],
-        ['deleted_at', '=', null]
+        ['deleted_at', '=', null],
+        ['id', '!=', 5]
         ])->orderBy('created_at', 'desc')->get();
 
       return response()->json($penyewa);
