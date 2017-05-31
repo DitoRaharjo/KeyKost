@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('user.login');
+    return view('welcome');
 });
 
 Route::get('api-doc', function() {
