@@ -10,7 +10,6 @@
   	<meta name="author" content="KeyKost" />
 
     <title>KeyKost</title>
-    <!-- <link rel="icon" href="{{ asset('uploads/Logo/logo_tabbrowser.png') }}" type="image" sizes="16x16"> <!------------------------------------------ ICON--------------> -->
 
     <!----------------------------------------------------Buat Dashboard(index.html)---------->
     <!-- Bootstrap -->

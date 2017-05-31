@@ -10,7 +10,6 @@
   	<meta name="author" content="KeyKost" />
 
     <title>KeyKost</title>
-    <!-- <link rel="icon" href="{{ asset('uploads/Logo/logo_tabbrowser.png') }}" type="image" sizes="16x16"> <!------------------------------------------ ICON--------------> -->
 
     <!-- Bootstrap -->
     <link href="{{ asset('Template/AdminPage/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
