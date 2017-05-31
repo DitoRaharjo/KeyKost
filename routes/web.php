@@ -20,9 +20,9 @@ Route::get('api-doc', function() {
 })->name('api.doc');
 
 // Login - Logout ADMIN
-Route::get('login', 'backend\LoginController@login')->name('user.login');
-Route::post('auth/login', 'backend\LoginController@doLogin')->name('user.auth.login');
-Route::get('logout', 'backend\LoginController@doLogout')->name('user.logout');
+Route::get('admin-login', 'backend\LoginController@login')->name('user.login');
+Route::post('admin-auth/login', 'backend\LoginController@doLogin')->name('user.auth.login');
+Route::get('admin-logout', 'backend\LoginController@doLogout')->name('user.logout');
 
 //Dashboard
 Route::group(['middleware'=>'auth'], function() {
