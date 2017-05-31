@@ -21,29 +21,31 @@ class LoginController extends Controller
   }
 
   public function login() {
-    if (Auth::check()) {
-      if(Auth::user()->status == 1) {
-        if(Auth::user()->deleted_at == NULL) {
-          if (strcasecmp(Auth::user()->role->name,'Administrator')==0) {
-            return redirect()->route('dashboard.admin');
-          } else {
-            alert()->error('Maaf anda tidak dapat masuk ke sini', 'Gagal Login!');
-            Auth::logout();
-            return redirect()->route('user.login');
-          }
-        } else {
-          Auth::logout();
-          alert()->error('Mohon maaf akun anda telah di HAPUS oleh admin, silahkan hubungi admin', 'Akun Dihapus!');
-          return redirect()->route('user.login');
-        }
-      } else {
-        Auth::logout();
-        alert()->error('Mohon maaf akun anda telah di NON-AKTIFKAN oleh admin, silahkan hubungi admin', 'Akun Non-Aktif!');
-        return redirect()->route('user.login');
-      }
-    } else {
-      return view('backend.login.index');
-    }
+    // if (Auth::check()) {
+    //   if(Auth::user()->status == 1) {
+    //     if(Auth::user()->deleted_at == NULL) {
+    //       if (strcasecmp(Auth::user()->role->name,'Administrator')==0) {
+    //         return redirect()->route('dashboard.admin');
+    //       } else {
+    //         alert()->error('Maaf anda tidak dapat masuk ke sini', 'Gagal Login!');
+    //         Auth::logout();
+    //         return redirect()->route('user.login');
+    //       }
+    //     } else {
+    //       Auth::logout();
+    //       alert()->error('Mohon maaf akun anda telah di HAPUS oleh admin, silahkan hubungi admin', 'Akun Dihapus!');
+    //       return redirect()->route('user.login');
+    //     }
+    //   } else {
+    //     Auth::logout();
+    //     alert()->error('Mohon maaf akun anda telah di NON-AKTIFKAN oleh admin, silahkan hubungi admin', 'Akun Non-Aktif!');
+    //     return redirect()->route('user.login');
+    //   }
+    // } else {
+    //   return view('backend.login.index');
+    // }
+
+    echo "test";
   }
 
   public function doLogin(Request $request) {
