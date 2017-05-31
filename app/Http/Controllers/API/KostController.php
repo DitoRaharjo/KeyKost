@@ -31,7 +31,7 @@ class KostController extends Controller
   // }
 
   public function getLogKost($id) {
-    $logPenyewa = UserLog::where('kost_id', '=', $id)->get();
+    $logPenyewa = UserLog::where('kost_id', '=', $id)->orderBy('created_at', 'desc')->get();
 
     $result = array();
     foreach ($logPenyewa as $penyewa) {

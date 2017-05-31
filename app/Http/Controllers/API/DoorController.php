@@ -21,7 +21,9 @@ class DoorController extends Controller
     $log_data = array();
     $log_data['rfid_id'] = $input['rfid_tag'];
 
-    $this->userLog($input['rfid_tag']);
+    if(strcasecmp($input['rfid_tag'], "NO_AUTH")!=0 ) {
+      $this->userLog($input['rfid_tag']);
+    }
 
     DB::beginTransaction();
     try

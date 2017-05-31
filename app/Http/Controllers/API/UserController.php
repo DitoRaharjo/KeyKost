@@ -43,7 +43,7 @@ class UserController extends Controller
       $penyewa = User::where([
         ['penyewa_id', '=', $input['kost_id']],
         ['deleted_at', '=', null]
-        ])->get();
+        ])->orderBy('created_at', 'desc')->get();
 
       return response()->json($penyewa);
     } else {
@@ -79,7 +79,7 @@ class UserController extends Controller
   }
 
   public function getLogPenyewa($id) {
-    $logPenyewa = UserLog::where('user_id', '=', $id)->get();
+    $logPenyewa = UserLog::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get();
 
     if($logPenyewa == null) {
       $result = [
